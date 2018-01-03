@@ -4,7 +4,17 @@ import styled from 'styled-components'
 class CommentBox extends Component {
 
   state = {
-    text: ''
+    text: '',
+    comments: [
+      {
+        id: 'wewe2122',
+        text: 'hello'
+      },
+      {
+        id: 'wqewqeq23',
+        text: 'hi'
+      }
+    ]
   }
 
   submitCmt = e => {
@@ -32,10 +42,17 @@ class CommentBox extends Component {
         <button onClick={this.submitCmt}>提交</button>
       </div>
     )
+
+    const { comments } = this.state
+    const reversedComments = [...comments].reverse()
+    const cmtList = reversedComments.map(
+      t => <div key={t.id}>{t.text}</div>
+    )
     
     return (
       <Wrap>
         {cmtForm}
+        {cmtList}
       </Wrap>
     )
   }
