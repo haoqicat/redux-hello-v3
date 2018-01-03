@@ -2,10 +2,40 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 class CommentBox extends Component {
+
+  state = {
+    text: ''
+  }
+
+  submitCmt = e => {
+    e.preventDefault()
+    console.log(this.state.text)
+    this.setState({
+      text: ''
+    })
+  }
+
+  handleChange = e => {
+    e.preventDefault()
+    this.setState({
+      text: e.target.value
+    })
+  }
+  
   render () {
+    const cmtForm = (
+      <div>
+        <input 
+          value={this.state.text} 
+          onChange={this.handleChange}
+        />
+        <button onClick={this.submitCmt}>提交</button>
+      </div>
+    )
+    
     return (
       <Wrap>
-        Comments
+        {cmtForm}
       </Wrap>
     )
   }
