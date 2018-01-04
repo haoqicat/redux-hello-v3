@@ -1,34 +1,17 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import shortid from 'shortid'
+import store from '../store'
 
 class CommentBox extends Component {
 
   state = {
-    text: '',
-    comments: [
-      {
-        id: 'wewe2122',
-        text: 'hello'
-      },
-      {
-        id: 'wqewqeq23',
-        text: 'hi'
-      }
-    ]
+    text: ''
   }
 
   submitCmt = e => {
     e.preventDefault()
-    const { text } = this.state
-    const id = shortid()
-    const comments = [
-      ...this.state.comments,
-      { id, text }
-    ]
     this.setState({
-      text: '',
-      comments
+      text: ''
     })
   }
 
@@ -50,7 +33,7 @@ class CommentBox extends Component {
       </FormWrap>
     )
 
-    const { comments } = this.state
+    const comments = store.getState()
     const reversedComments = [...comments].reverse()
     const cmtList = reversedComments.map(
       t => <div key={t.id}>{t.text}</div>
