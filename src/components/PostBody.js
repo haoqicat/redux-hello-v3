@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import store from '../store'
 
 class PostBody extends Component {
   render () {
+    const { comments } = this.props
     return (
       <Wrap>
         <CommentNo>
-          {store.getState().length} 评论
+          {comments.length} 评论
         </CommentNo>
       </Wrap>
     )
