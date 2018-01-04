@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import store from '../store'
+import shortid from 'shortid'
 
 class CommentBox extends Component {
 
@@ -10,7 +11,13 @@ class CommentBox extends Component {
 
   submitCmt = e => {
     e.preventDefault()
-    store.dispatch({ type: 'ADD_COMMENT' })
+    const { text } = this.state
+    const id = shortid()
+    const comment = {
+      id,
+      text
+    }
+    store.dispatch({ type: 'ADD_COMMENT', comment })
     this.setState({
       text: ''
     })

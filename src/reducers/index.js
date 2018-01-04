@@ -10,7 +10,16 @@ const initialState = [
 ]
 
 const rootReducer = (state = initialState, action) => {
-  return state
+  switch (action.type) {
+    case 'ADD_COMMENT':
+      const comments = [
+        ...state,
+        action.comment
+      ]
+      return comments
+    default:
+      return state
+  }
 }
 
 export default rootReducer
