@@ -7,13 +7,17 @@ class Post extends Component {
   render() {
     const { comments, match, posts } = this.props
     const { id } = match.params
+    const currentComments = comments.filter(
+      t => t.post === id
+    )
+    // FIXME：重构到 selecters 函数中比较好
     return (
       <Wrap>
         <Upper>
-          <PostBody id={id} posts={posts} comments={comments} />
+          <PostBody id={id} posts={posts} comments={currentComments} />
         </Upper>
         <Bottom>
-          <CommentBox postId={id} comments={comments} />
+          <CommentBox postId={id} comments={currentComments} />
         </Bottom>
       </Wrap>
     )
