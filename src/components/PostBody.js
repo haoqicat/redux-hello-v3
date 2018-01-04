@@ -31,6 +31,9 @@ const Wrap = styled.div`
   box-shadow: 0 2px 2px rgba(0, 0, 0, .5);
   height: 300px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 `
 
 const CommentNo = styled.div`
