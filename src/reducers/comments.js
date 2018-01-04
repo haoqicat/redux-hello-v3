@@ -1,11 +1,13 @@
 const initialState = [
   {
     id: 'wewe2122',
-    text: 'hello'
+    text: 'hello',
+    post: '1'
   },
   {
     id: 'wqewqeq23',
-    text: 'hi'
+    text: 'hi',
+    post: '2'
   }
 ]
 

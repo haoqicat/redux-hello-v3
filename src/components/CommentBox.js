@@ -41,8 +41,12 @@ class CommentBox extends Component {
       </FormWrap>
     )
 
-    const { comments } = this.props
-    const reversedComments = [...comments].reverse()
+    const { comments, postId } = this.props
+    const currentComments = comments.filter(
+      t => t.post === postId
+    )
+    // FIXME：重构到 selecters 函数中比较好
+    const reversedComments = [...currentComments].reverse()
     const cmtList = reversedComments.map(
       t => <div key={t.id}>{t.text}</div>
     )

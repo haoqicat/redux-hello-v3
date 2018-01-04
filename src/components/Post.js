@@ -13,7 +13,7 @@ class Post extends Component {
           <PostBody id={id} posts={posts} comments={comments} />
         </Upper>
         <Bottom>
-          <CommentBox comments={comments} />
+          <CommentBox postId={id} comments={comments} />
         </Bottom>
       </Wrap>
     )
