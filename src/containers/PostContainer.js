@@ -5,7 +5,8 @@ import { connect } from 'react-redux'
 const PostContainer = props => <Post {...props} />
 
 const mapStateToProps = state =>({
-  comments: state.comments
+  comments: state.comments,
+  posts: state.posts
 })
 
 export default connect(mapStateToProps)(PostContainer)

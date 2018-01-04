@@ -13,7 +13,7 @@ class Main extends Component {
         <Router>
           <div>
             <Route exact path='/' component={HomeContainer} />
-            <Route path='/post' component={PostContainer} />
+            <Route path='/post/:id' component={PostContainer} />
           </div>
         </Router>
       </div>

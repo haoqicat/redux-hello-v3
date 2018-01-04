@@ -5,11 +5,12 @@ import styled from 'styled-components'
 
 class Post extends Component {
   render() {
-    const { comments } = this.props
+    const { comments, match, posts } = this.props
+    const { id } = match.params
     return (
       <Wrap>
         <Upper>
-          <PostBody comments={comments} />
+          <PostBody id={id} posts={posts} comments={comments} />
         </Upper>
         <Bottom>
           <CommentBox comments={comments} />
