@@ -15,7 +15,8 @@ class CommentBox extends Component {
     const id = shortid()
     const comment = {
       id,
-      text
+      text,
+      post: this.props.postId
     }
     store.dispatch({ type: 'ADD_COMMENT', comment })
     this.setState({
