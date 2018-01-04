@@ -10,6 +10,7 @@ class CommentBox extends Component {
 
   submitCmt = e => {
     e.preventDefault()
+    store.dispatch({ type: 'ADD_COMMENT' })
     this.setState({
       text: ''
     })
