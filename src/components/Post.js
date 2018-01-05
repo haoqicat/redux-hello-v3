@@ -8,7 +8,7 @@ class Post extends Component {
     const { comments, match, posts, addComment } = this.props
     const { id } = match.params
     const currentComments = comments.filter(
-      t => t.post === id
+      t => t.postId.toString() === id
     )
     // FIXME：重构到 selecters 函数中比较好
     return (

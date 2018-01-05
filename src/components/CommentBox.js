@@ -43,7 +43,7 @@ class CommentBox extends Component {
     const { comments } = this.props
     const reversedComments = [...comments].reverse()
     const cmtList = reversedComments.map(
-      t => <div key={t.id}>{t.text}</div>
+      t => <Comment key={t.id}>{t.body}</Comment>
     )
     
     return (
@@ -102,4 +102,9 @@ const CmtList = styled.div`
   div {
     line-height: 30px;
   }
+`
+
+const Comment = styled.div`
+  border-bottom: 1px solid #00bcd4;
+  margin-bottom: 20px;
 `

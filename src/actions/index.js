@@ -19,3 +19,18 @@ export const fetchPosts = () => {
     )
   }
 }
+
+export const fetchComments = () => {
+  return dispatch => {
+    const uri = `https://jsonplaceholder.typicode.com/comments`
+    axios.get(uri).then(
+      res => {
+        const comments = res.data
+        dispatch({
+          type: 'LOAD_COMMENTS',
+          comments
+        })
+      }
+    )
+  }
+}

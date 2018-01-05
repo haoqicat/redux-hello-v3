@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import Main from '../components/Main'
 import '../assets/global.css'
 import { connect } from 'react-redux'
-import { fetchPosts } from '../actions'
+import { fetchPosts, fetchComments } from '../actions'
 
 class App extends Component {
   componentDidMount() {
     this.props.fetchPosts()
+    this.props.fetchComments()
   }
   
   render() {
@@ -17,5 +18,6 @@ class App extends Component {
 }
 
 export default connect(null, {
-  fetchPosts
+  fetchPosts,
+  fetchComments
 })(App)

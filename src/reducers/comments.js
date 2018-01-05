@@ -1,18 +1,7 @@
-const initialState = [
-  {
-    id: 'wewe2122',
-    text: 'hello',
-    post: '1'
-  },
-  {
-    id: 'wqewqeq23',
-    text: 'hi',
-    post: '2'
-  }
-]
-
-const comments = (state = initialState, action) => {
+const comments = (state = [], action) => {
   switch (action.type) {
+    case 'LOAD_COMMENTS':
+      return action.comments
     case 'ADD_COMMENT':
       const comments = [
         ...state,
