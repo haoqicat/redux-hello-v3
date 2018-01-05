@@ -5,8 +5,8 @@ class PostBody extends Component {
   render () {
     const { comments, id, posts } = this.props
     const post = posts.find(
-      t => t.id === id
-    )
+      t => t.id.toString() === id
+    ) || {}
     // FIXME: 上面的逻辑最好移动到 selectors 中
     // 实现一下 postsById
     return (

@@ -26,7 +26,7 @@ export default Home
 
 const Wrap = styled.div`
   background: #00bcd4;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 40px;
 `
 
