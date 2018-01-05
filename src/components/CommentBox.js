@@ -14,14 +14,15 @@ class CommentBox extends Component {
     const id = shortid()
     const comment = {
       id,
-      text,
-      post: this.props.postId
+      body: text,
+      postId: this.props.postId
     }
     this.props.addComment(comment)
     this.setState({
       text: ''
     })
   }
+  
   handleChange = e => {
     e.preventDefault()
     this.setState({
