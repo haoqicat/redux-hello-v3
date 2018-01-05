@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import store from '../store'
 import shortid from 'shortid'
+import { addComment } from '../actions'
 
 class CommentBox extends Component {
 
@@ -18,12 +19,11 @@ class CommentBox extends Component {
       text,
       post: this.props.postId
     }
-    store.dispatch({ type: 'ADD_COMMENT', comment })
+    store.dispatch(addComment(comment))
     this.setState({
       text: ''
     })
   }
-
   handleChange = e => {
     e.preventDefault()
     this.setState({
